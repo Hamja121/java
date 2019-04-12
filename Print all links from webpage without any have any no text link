@@ -1,0 +1,23 @@
+System.setProperty("webdriver.chrome.driver", "C:\\\\MyDrivers\\\\ChromeDriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://amazon.com");
+
+		// total no of links 
+		List<WebElement> linkList=driver.findElements(By.tagName("a"));
+		   System.out.println("Total no of links: "+linkList.size());
+		   
+		// linkList.
+		     
+        //print each link
+		   for (int a=0; a<linkList.size(); a++) {   
+			   
+			  String linkText= linkList.get(a).getText();
+			   
+			  if(linkText.isEmpty()) {
+				  linkText.trim();
+			  }
+			  else {
+				  System.out.println(linkText);
+			  }
+				 
+		   }
